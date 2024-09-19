@@ -3,7 +3,6 @@
 -----------------------------------------------------------------------------------------*/
 
 import {randomBytes} from 'crypto';
-const link = /chat.whatsapp.com/;
 const handler = async (m, {conn, text, groupMetadata}) => {
   if (m.isBaileys && m.fromMe) {
     return !0;
