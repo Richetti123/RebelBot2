@@ -32,8 +32,8 @@ let handler = async (m, { text, conn, args, usedPrefix, command }) => {
 
 			try {
 				let v = youtubeLink;
-				let yt = await ytDownload(v, 'audio');
-				await conn.sendFile(m.chat, yt, 'default.mp3', null, m, false, { mimetype: 'audio/mp4' });
+				let data = await fetch('https://api.cafirexos.com/api/ytplay?url=' + v).then((data) => data.json()).then((res) => res);
+				await conn.sendFile(m.chat, data.resultado.download.audio, 'default.mp3', null, m, false, { mimetype: 'audio/mpeg' });
 			} catch {
 				try {
 					let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${youtubeLink}`)    
