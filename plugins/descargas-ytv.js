@@ -32,8 +32,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 	await conn.reply(m.chat, lenguajeGB['smsAvisoEG']() + mid.smsVid, fkontak, m)
 	try {
 		let v = youtubeLink
-		const yt = await ytDownload(v, 'video');
-		await await conn.sendMessage(m.chat, { video: { url: yt }, fileName: `${Date.now()}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣}` }, { quoted: m })
+		let data = await fetch('https://api.cafirexos.com/api/ytplay?url=' + v).then((data) => data.json()).then((res) => res);
+		await await conn.sendMessage(m.chat, { video: { url: data.resultado.download.video }, fileName: `${data.resultado.title}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣}` }, { quoted: m });
 	} catch (E1) {
 //console.log('Error 1 ' + E1)  
 try {  
