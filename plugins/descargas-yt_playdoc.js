@@ -18,13 +18,13 @@ conn.reply(m.chat, `${lenguajeGB['smsAvisoEG']()}𝙋𝙍𝙊𝙉𝙏𝙊 𝙏�
 if (command == 'playaudiodoc' || command == 'ytmp3doc') {
 try {
 	let v = yt_play[0].url;
-	let data = await fetch('https://api.cafirexos.com/api/ytplay?url=' + v).then((data) => data.json()).then((res) => res);
+	let data = await fetch('https://www.vanitas-api.online/download/youtube-audio?url=' + encodeURIComponent(v) + '&apikey=richetti').then((data) => data.json()).then((res) => res);
 	let cap = `╭━❰  ${wm}  ❱━⬣\n┃📥 𝙔𝙊𝙐𝙏𝙐𝘽𝙀 𝘿𝙇 📥\n┃ও *${mid.smsYT1}:* \n┃﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘\n┃ও *${mid.smsYT11}:*\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`.trim();
 	await conn.sendMessage(m.chat, {
 		document: { 
-			url: data.resultado.download.audio
+			url: data.response.link
 		},
-		fileName: `${data.resultado.title}.mp3`,
+		fileName: `${data.response.title}.mp3`,
 		caption: cap,
 		mimetype: 'audio/mpeg',
 		contextInfo: {
@@ -77,7 +77,7 @@ handler.limit = 2
 if (command == 'playvideodoc' || command == 'ytmp4doc') {
 try {
 	let v = yt_play[0].url;
-	let data = await fetch('https://api.cafirexos.com/api/ytplay?url=' + v).then((data) => data.json()).then((res) => res);
+	let data = await fetch('https://www.vanitas-api.online/download/youtube-video?url=' + encodeURIComponent(v) + '&apikey=richetti').then((data) => data.json()).then((res) => res);
 	let cap = `╭━❰  ${wm}  ❱━⬣\n┃📥 𝙔𝙊𝙐𝙏𝙐𝘽𝙀 𝘿𝙇 📥\n┃ও *${mid.smsYT1}:* \n┃﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘\n┃ও *${mid.smsYT11}:*\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`.trim();
 	await conn.sendMessage(m.chat, {
 		document: { 
