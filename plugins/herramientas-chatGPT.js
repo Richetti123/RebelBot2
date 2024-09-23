@@ -14,7 +14,7 @@ await conn.sendPresenceUpdate('composing', m.chat)
 
 async function luminsesi(q, username, logic) {
 try {
-const response = await axios.post("https://lumin-ai.xyz/", {
+const response = await axios.post("https://luminai.my.id", {
 content: q,
 user: username,
 prompt: logic,
@@ -28,7 +28,7 @@ console.error('Error al obtener:', error);
 let query = m.text;
 let username = `${m.pushName}`;
 
-let syms1 = `Actuaras como un Bot de WhatsApp el cual fue creado por GataNina-Li, tu seras GataBot-MD 🐈`;  
+let syms1 = `Actuaras como un Bot de WhatsApp el cual fue creado por GataNina-Li, tu seras MichiBot 🐈`;  
 
 let result = await luminsesi(query, username, syms1);
  await m.reply(result)
@@ -51,4 +51,3 @@ await m.reply(res.gpt)
 }}
 handler.command = /^(openai|chatgpt|ia|ai|openai2|chatgpt2|ia2)$/i;
 export default handler;
-
