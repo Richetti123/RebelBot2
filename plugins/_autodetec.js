@@ -12,10 +12,10 @@ let chat = global.db.data.chats[m.chat]
 let users = participants.map(u => conn.decodeJid(u.id))
 const groupAdmins = participants.filter(p => p.admin)
 const listAdmin = groupAdmins.map((v, i) => `*» ${i + 1}. @${v.id.split('@')[0]}*`).join('\n')
-/*if (chat.detect && m.messageStubType == 2) {
+if (chat.detect && m.messageStubType == 2) {
 const chatId = m.isGroup ? m.chat : m.sender;
 const uniqid = chatId.split('@')[0];
-const sessionPath = './GataBotSession/';
+const sessionPath = './MichiBot/';
 const files = await fs.readdir(sessionPath);
 let filesDeleted = 0;
 for (const file of files) {
