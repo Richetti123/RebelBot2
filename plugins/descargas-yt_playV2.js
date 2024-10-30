@@ -5,7 +5,7 @@ import axios from 'axios';
 import fg from 'api-dylux';
 
 const handler = async (m, { command, usedPrefix, conn, text }) => {
-    if (!text) throw `${mg}${mid.smsMalused4}\n*${usedPrefix + command} Billie Eilish - Bellyache*`;
+    if (!text) throw `${mg}${mid.smsMalused4}\n*${usedPrefix + command} Feid - De Tanto Chimbiar*`;
 
     try {
         if (command === 'play.1') {
