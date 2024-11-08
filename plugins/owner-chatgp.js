@@ -21,7 +21,7 @@ const handler = async (m, {conn, text, groupMetadata}) => {
     global.db.data.users[m.sender].msgwait = new Date * 1;
   }
 };
-handler.command = /^(msg|comunicado)$/i;
+handler.command = /^(msg)$/i;
 handler.owner = true;
 handler.group = true;
 export default handler;
