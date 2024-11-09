@@ -53,7 +53,7 @@ const texto1 = `*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 							mediaType: 1,
 							showAdAttribution: true,
 							renderLargerThumbnail: true
-						}}} , { quoted: m })
+						}}} , { quoted: m });
 				if (command == 'play2') {
 					try {
 						let v = yt_play[0].url
