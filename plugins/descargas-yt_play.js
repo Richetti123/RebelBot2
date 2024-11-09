@@ -3,14 +3,22 @@ import yts from 'yt-search';
 import ytdl from 'ytdl-core';
 import axios from 'axios';
 import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
-const handler = async (m, {conn, command, args, text, usedPrefix}) => {
-if (!text) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Alvaro Diaz - MAMI 100PRE SABE(INTERLUDE)*`
-try { 
-const yt_play = await search(args.join(' '))
-const texto1 = `*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
+let handler = async (m, { conn, command, args, text, usedPrefix }) => {
+	let q, v, yt, dl_url, ttl, size, lolhuman, lolh, n, n2, n3, n4, cap, qu, currentQuality   
+	if (!text) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Natanael Cano - Pacas verdes*`
+		try {
+			const yt_play = await search(args.join(" "))
+			let additionalText = ''
+			if (command === 'play') { 
+				additionalText = '𝘼𝙐𝘿𝙄𝙊 🔊'
+			} else if (command === 'play2') {
+				additionalText = '𝙑𝙄𝘿𝙀𝙊 🎥'
+			};
+
+			let captionvid = `𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 
 ও ${mid.smsYT1}
-» ${yt_play[0].title}
+»  ${yt_play[0].title}
 ﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
 ও ${mid.smsYT15}
 » ${yt_play[0].ago}
@@ -21,15 +29,14 @@ const texto1 = `*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 ও  ${mid.smsYT10}
 » ${MilesNumber(yt_play[0].views)}
 ﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
-ও  ${mid.smsYT2}
-» ${yt_play[0].author.name}
-﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
-ও ${mid.smsYT4}
+ও  ${mid.smsYT4}
 » ${yt_play[0].url}
+﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
+ও ${mid.smsAguarde(additionalText)}
 
-*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*`.trim()
-
-await conn.sendMessage(m.chat, {
+*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*`  
+				
+				await conn.sendMessage(m.chat, {
 					text: captionvid,
 					contextInfo: {
 						externalAdReply: {
@@ -54,7 +61,7 @@ await conn.sendMessage(m.chat, {
 							showAdAttribution: true,
 							renderLargerThumbnail: true
 						}}} , { quoted: m });
-}}} catch (e) {
+					} catch {
 await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, fkontak, m)
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
 console.log(e)
