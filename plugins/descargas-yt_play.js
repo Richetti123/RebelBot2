@@ -54,12 +54,6 @@ const texto1 = `*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 							showAdAttribution: true,
 							renderLargerThumbnail: true
 						}}} , { quoted: m });
-				if (command == 'play2') {
-					try {
-						let v = yt_play[0].url
-						const yt = await ytDownload(v, 'video');
-						ttl = yt_play[0].title;
-						await await conn.sendMessage(m.chat, { video: { url: yt }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${ttl}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m });
 } catch (e) {
 await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, fkontak, m)
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
