@@ -132,7 +132,7 @@ renderLargerThumbnail: true
 				await await conn.sendMessage(m.chat, { video: { url: yt }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${ttl}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
 } catch {   
 try {  
-const dataRE = await fetch(`https://www.vanitas-api.online/download/youtube-audio?url=${yt_play[0].url}`);
+const dataRE = await fetch(`https://www.vanitas-api.online/download/youtube-video?url=${yt_play[0].url}`);
 							const dataRET = await dataRE.json();
 await conn.sendMessage(m.chat, { video: { url: dataRET.response.link }, fileName: `error.mp4`, caption: `_${wm}_`, thumbnail: data.response.thumbnail, mimetype: 'video/mp4' }, { quoted: m })     
 } catch {  
