@@ -129,7 +129,8 @@ renderLargerThumbnail: true
 				let v = yt_play[0].url
 				const yt = await ytDownload(v, 'video');
 				ttl = yt_play[0].title;
-				await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${n}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(n4) }, { quoted: m })
+				await await conn.sendMessage(m.chat, { video: { url: yt }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${ttl}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
+} catch {   
 try {  
 const dataRE = await fetch(`https://www.vanitas-api.online/download/youtube-video?url=${yt_play[0].url}`);
 							const dataRET = await dataRE.json();
