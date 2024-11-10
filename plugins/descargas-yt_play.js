@@ -6,7 +6,7 @@ import { ytDownload } from '../lib/y2mate.js';
 
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
 	let q, v, yt, dl_url, ttl, size, lolhuman, lolh, n, n2, n3, n4, cap, qu, currentQuality   
-	if (!text) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Natanael Cano - Pacas verdes*`
+	if (!text) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Alvaro Diaz - MAMI 100PRE SABE*`
 		try {
 			const yt_play = await search(args.join(" "))
 			let additionalText = ''
@@ -127,17 +127,13 @@ renderLargerThumbnail: true
 		if (command == 'play2') {
 			try {
 				let v = yt_play[0].url
-				const yt = await ytDownload(v, 'video');
-				ttl = yt_play[0].title;
-				await await conn.sendMessage(m.chat, { video: { url: yt }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${ttl}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
-} catch {   
-try {  
-const dataRE = await fetch(`https://www.vanitas-api.online/download/youtube-video?url=${yt_play[0].url}`);
-							const dataRET = await dataRE.json();
-await conn.sendMessage(m.chat, { video: { url: dataRET.response.link }, fileName: `error.mp4`, caption: `_${wm}_`, thumbnail: data.response.thumbnail, mimetype: 'video/mp4' }, { quoted: m })     
-} catch {  
-try {
-let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
+				const dataRE = await fetch(`https://www.vanitas-api.online/download/youtube-video?url=${v}`);
+				const dataRET = await dataRE.json();
+				console.log(dataRET)
+				await conn.sendMessage(m.chat, { video: { url: dataRET.response.link }, fileName: `error.mp4`, caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${yt_play[0].title}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣` }, { quoted: m })
+			} catch {
+				try {
+					let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
 let lolh = await lolhuman.json()
 let n = lolh.result.title || 'error'
 let n2 = lolh.result.link
@@ -145,13 +141,13 @@ let n3 = lolh.result.size
 let n4 = lolh.result.thumbnail
 await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 ${mid.smsYT1}\n┃ ${n}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(n4) }, { quoted: m })
 } catch {
-}}}    
+}} 
 }} catch {
 handler.limit = 0
 }}
 handler.command = ['play', 'play2']
 handler.exp = 500
-handler.limit = 1
+handler.limit = 0
 export default handler
 
 async function search(query, options = {}) {
