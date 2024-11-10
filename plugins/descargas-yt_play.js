@@ -136,7 +136,7 @@ let mediaa = await ytMp4(yt_play[0].url)
 await conn.sendMessage(m.chat, { video: { url: mediaa.result }, fileName: `error.mp4`, caption: `_${wm}_`, thumbnail: mediaa.thumb, mimetype: 'video/mp4' }, { quoted: m })     
 } catch {  
 try {
-let lolhuman = await fetch(`https://www.vanitas-api.online/download/youtube-audio?url=${yt_play[0].url}`)    
+let lolhuman = await fetch(`https://www.vanitas-api.online/download/youtube-video?url=${yt_play[0].url}`)    
 let lolh = await lolhuman.json()
 let n = lolh.result.title || 'error'
 let n2 = lolh.result.link
