@@ -3,19 +3,11 @@ import yts from 'yt-search';
 import ytdl from 'ytdl-core';
 import axios from 'axios';
 import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
-let handler = async (m, { conn, command, args, text, usedPrefix }) => {
-	let q, v, yt, dl_url, ttl, size, lolhuman, lolh, n, n2, n3, n4, cap, qu, currentQuality   
-	if (!text) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Natanael Cano - Pacas verdes*`
-		try {
-			const yt_play = await search(args.join(" "))
-			let additionalText = ''
-			if (command === 'play') { 
-				additionalText = '𝘼𝙐𝘿𝙄𝙊 🔊'
-			} else if (command === 'play2') {
-				additionalText = '𝙑𝙄𝘿𝙀𝙊 🎥'
-			};
-
-			let captionvid = `𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
+const handler = async (m, { conn, command, args, text, usedPrefix }) => {
+if (!text) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Alvaro Diaz - MAMI 100PRE SABE(INTERLUDE)*`
+try { 
+const yt_play = await search(args.join(' '))
+const texto1 = `*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 
 ও ${mid.smsYT1}
 »  ${yt_play[0].title}
@@ -67,7 +59,7 @@ console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗
 console.log(e)
 handler.limit = 0
 }}
-handler.command = ['play', 'play2', 'play3', 'play4']
+handler.command = ['play', 'play2']
 //handler.limit = 3
 //handler.register = true 
 export default handler;
