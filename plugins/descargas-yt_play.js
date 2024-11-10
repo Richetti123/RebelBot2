@@ -32,7 +32,7 @@ const texto1 = `*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 
 *𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*`.trim()
 
-await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error,jpg', texto1, m, null, fake);
+await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error,jpg', texto1, m, null);
 //conn.sendButton(m.chat, texto1, botname, yt_play[0].thumbnail, [['Audio', `${usedPrefix}ytmp3 ${yt_play[0].url}`], ['video', `${usedPrefix}ytmp4 ${yt_play[0].url}`]], null, null, m)
 
 if (!ytplay2.all.length) {
@@ -80,7 +80,7 @@ const texto1 = `*𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 
 *𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*`.trim()
 m.react("⌛")
-await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error,jpg', texto1, m, null, fake);
+await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error,jpg', texto1, m, null);
 //conn.sendButton(m.chat, texto1, botname, yt_play[0].thumbnail, [['Audio', `${usedPrefix}ytmp3 ${yt_play[0].url}`], ['video', `${usedPrefix}ytmp4 ${yt_play[0].url}`]], null, null, m)
 
 if (!ytplay2.all.length) {
