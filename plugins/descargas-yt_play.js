@@ -93,7 +93,7 @@ renderLargerThumbnail: true
 }}} , { quoted: m })       
 } catch {     
 try {
-let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
+let lolhuman = await fetch(`https://www.vanitas-api.online/download/youtube-audio?url=${yt_play[0].url}`)    
 let lolh = await lolhuman.json()
 let n = lolh.result.title || 'error'
 await conn.sendMessage(m.chat, { audio: { url: lolh.result.link}, mimetype: 'audio/mpeg', contextInfo: {
