@@ -6,7 +6,6 @@ import {instagramdl} from '@bochilteam/scraper';
 const handler = async (m, {conn, args, command, usedPrefix}) => {
 if (!args[0]) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsInsta}\n*${usedPrefix + command} https://www.instagram.com/p/CCoI4DQBGVQ/?igshid=YmMyMTA2M2Y=*`
 const { key } = await conn.sendMessage(m.chat, {text: wait}, {quoted: fkontak});
-let description = media.description;
 // await delay(1000 * 2);
 await conn.sendMessage(m.chat, {text: waitt, edit: key});
 await conn.sendMessage(m.chat, {text: waittt, edit: key});
@@ -15,12 +14,12 @@ try{
 const responseIg = await axios.get(`https://deliriussapi-oficial.vercel.app/download/instagram?url=${args[0]}`);
 const resultlIg = responseIg.data;
 let linkig=resultlIg.data[0].url
-await conn.sendFile(m.chat,linkig, 'error.mp4', `${wm}\n\n${description}`, m);
+await conn.sendFile(m.chat,linkig, 'error.mp4', `✨ *ENLACE:* ${shortUrRRl}\n\n${wm}`, m);
 }catch{
 try{
 const resultD = await instagramDl(args[0]);
 const linkD=resultD[0].download_link
-await conn.sendFile(m.chat, linkD, 'error.mp4', `${wm}\n\n${description}`, m);
+await conn.sendFile(m.chat, linkD, 'error.mp4', `✨ *ENLACE:* ${shortUrRRl}\n\n${wm}`, m);
 await conn.sendMessage(m.chat, {text: waittttt, edit: key})
 } catch{
 try {
