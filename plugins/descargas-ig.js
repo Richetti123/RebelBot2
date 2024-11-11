@@ -11,7 +11,7 @@ await conn.sendMessage(m.chat, {text: waitt, edit: key});
 await conn.sendMessage(m.chat, {text: waittt, edit: key});
 await conn.sendMessage(m.chat, {text: waitttt, edit: key});
 try{
-const responseIg = await axios.get(`https://deliriusapi-official.vercel.app/download/instagram?url=${args[0]}`);
+const responseIg = await axios.get(`https://www.vanitas-api.online/download/instagram?url=${args[0]}`);
 const resultlIg = responseIg.data;
 let linkig=resultlIg.data[0].url
 await conn.sendFile(m.chat,linkig, 'error.mp4', `${wm}`, m);
@@ -57,7 +57,7 @@ for (const {url} of resultssss) await conn.sendFile(m.chat, url, 'error.mp4', tx
 await conn.sendMessage(m.chat, {text: waittttt, edit: key})
 } catch {
 try {
-const human = await fetch(`https://api.lolhuman.xyz/api/instagram?apikey=${lolkeysapi}&url=${args[0]}`);
+const human = await fetch(`https://www.vanitas-api.online/download/instagram?url=${args[0]}`);
 const json = await human.json();
 const videoig = json.result;
 const shortUrl1 = await (await fetch(`https://tinyurl.com/api-create.php?url=${args[0]}`)).text();
