@@ -32,12 +32,12 @@ let handler = async (m, { text, conn, args, usedPrefix, command }) => {
 
 			try {
 				let v = youtubeLink;
-				let data = await fetch('https://www.vanitas-api.online/download/youtube-audio?url=' + encodeURIComponent(v) + '&apikey=richetti').then((data) => data.json()).then((res) => res);
+				let data = await fetch(`https://deliriussapi-oficial.vercel.app/download/ytmp3?url=${youtubeLink}`);
 				await conn.sendMessage(m.chat, { audio: { url: data.response.link }, mimetype: 'audio/mpeg', ptt: false }, { quoted: m });
 			} catch(e) {
 				console.log(e);
 				try {
-					let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${youtubeLink}`)    
+					let lolhuman = await fetch(`https://deliriussapi-oficial.vercel.app/download/ytmp3?url=${youtubeLink}`)    
 					let lolh = await lolhuman.json()
 					let n = lolh.result.title || 'error'
 					await conn.sendMessage(m.chat, { audio: { url: lolh.result.link }, fileName: `${n}.mp3`, mimetype: 'audio/mp4' }, { quoted: m })  
